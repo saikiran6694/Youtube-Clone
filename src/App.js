@@ -2,8 +2,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Box } from '@mui/material';
 
 import { ChannelDetail, VideoDetail, SearchFeed, Navbar, Feed } from './components';
+import { BrowserCompatilibilityService } from './utils/BrowserCompatibility';
 
 const App = () => (
+  const isUserBrowserCompatibleForOurChatUI = useMemo(() => {
+        return BrowserCompatilibilityService.isUserBrowserCompatibleWithOurChat();
+  }, []);
+
+  console.log("compatibility: ", isUserBrowserCompatibleForOurChatUI)
+
   <BrowserRouter>
     <Box sx={{ backgroundColor: '#000' }}>
       <Navbar />
